@@ -1,0 +1,31 @@
+[
+    {
+        "id": "injectVM",
+        "type": "boolean",
+        "default": false
+    },
+    {
+        "id": "workTime",
+        "type": "number",
+        "default": 0.95
+    },
+    {
+        "id": "output",
+        "type": "selector",
+        "default": "debug",
+        "options": [
+            {
+                "id": "debug",
+                "message": "debug"
+            },
+            {
+                "id": "info",
+                "message": "info"
+            },
+            {
+                "id": "warn",
+                "message": "warn"
+            }
+        ]
+    }
+]

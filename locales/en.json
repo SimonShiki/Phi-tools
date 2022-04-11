@@ -1,0 +1,21 @@
+{
+    "phi.tools.name": "Phi Tools",
+    "phi.tools.description": "This extension has super cow power.",
+    "phi.tools.category": "φ",
+    "phi.tools.eval": "eval [CODE]",
+    "phi.tools.addCategory": "Add category [CATEGORY] [COLOR]",
+    "phi.tools.removeCategory": "Remove category [CATEGORY]",
+    "phi.tools.addBlock": "Add block [OPCODE] ([TYPE]) to [CATEGORY] ([FUNC])",
+    "phi.tools.removeBlock": "Remove block [OPCODE]",
+    "phi.tools.registerGlobalFunc": "Register global function [NAME] [FUNC]",
+    "phi.tools.unregisterGlobalFunc": "Unregister global function [NAME]",
+    "phi.tools.callGlobalFunc": "Call global function [NAME] with arg [ARGS]",
+    "phi.tools.printSettings": "Print settings",
+    "phi.tools.printInstance": "Print instances",
+    "phi.tools.settings.injectVM": "Inject VM",
+    "phi.tools.settings.workTime": "Work Time",
+    "phi.tools.settings.output": "Output",
+    "phi.tools.settings.output.debug": "Debug",
+    "phi.tools.settings.output.info": "Info",
+    "phi.tools.settings.output.warn": "Warn"
+}
