@@ -2,6 +2,9 @@ const { Extension, type, api } = require('clipcc-extension');
 
 class MyExtension extends Extension {
     onInit() {
+        const { runtime } = api.getVmInstance();
+        this.version = runtime.version.split('.');
+        
         console.log('init!');
         api.addCategory({
             categoryId: 'phi.tools.category',
@@ -185,6 +188,31 @@ class MyExtension extends Extension {
                 console.log('BlockInstance', api.getBlockInstance());
             }
         });
+        if (this.version[1] >= 1 && this.version[2] >= 4) {
+            api.addBlock({
+                opcode: 'phi.tools.lost',
+                type: type.BlockType.COMMAND,
+                messageId: 'phi.tools.lost',
+                categoryId: 'phi.tools.category',
+                branchCount: 1,
+                param: {
+                    PRO: {
+                        type: type.ParameterType.NUMBER,
+                        default: '1'
+                    }
+                },
+                function: (args, util) => {
+                    const originalFunc = util.thread.popStack.prototype;
+                    util.thread.popStack.prototype = function () {
+                        if (Math.random() >= (1 - Number(args.PRO))) {
+                            originalFunc.call(this);
+                        } else return;
+                    };
+                    util.startBranch(1, false);
+                    util.thread.popStack.prototype = originalFunc;
+                }
+            });
+        }
     }
 
     onUninit () {

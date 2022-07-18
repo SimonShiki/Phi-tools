@@ -12,6 +12,7 @@
     "phi.tools.callGlobalFunc": "Call global function [NAME] with arg [ARGS]",
     "phi.tools.printSettings": "Print settings",
     "phi.tools.printInstance": "Print instances",
+    "phi.tools.lost": "lost [PRO] [SUBSTACK] [SUBSTACK2] [SUBSTACK3] [SUBSTACK4]",
     "phi.tools.settings.injectVM": "Inject VM",
     "phi.tools.settings.workTime": "Work Time",
     "phi.tools.settings.output": "Output",
