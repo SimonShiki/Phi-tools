@@ -3,6 +3,7 @@
     "phi.tools.description": "This extension has super cow power.",
     "phi.tools.category": "φ",
     "phi.tools.eval": "eval [CODE]",
+    "phi.tools.button": "Give me money",
     "phi.tools.addCategory": "Add category [CATEGORY] [COLOR]",
     "phi.tools.removeCategory": "Remove category [CATEGORY]",
     "phi.tools.addBlock": "Add block [OPCODE] ([TYPE]) to [CATEGORY] ([FUNC])",

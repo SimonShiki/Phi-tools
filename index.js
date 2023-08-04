@@ -1,11 +1,17 @@
-const { Extension, type, api } = require('clipcc-extension');
+const ctx = require('clipcc-extension');
+console.log(window.ccx = ctx);
+const { Extension, type, api } = ctx;
 
 class MyExtension extends Extension {
     onInit() {
-        const { runtime } = api.getVmInstance();
-        this.version = runtime.version.split('.');
-        
-        console.log('init!');
+        console.log('initing...', this);
+        try {
+            const { runtime } = api.getVmInstance();
+            this.version = runtime.version? runtime.version.split('.') : [3, 2, 0];
+        } catch (e) {
+            console.log('I am in sandbox!!, becus', e);
+            this.version = [3, 2, 0];
+        }
         api.addCategory({
             categoryId: 'phi.tools.category',
             messageId: 'phi.tools.category',
@@ -60,6 +66,14 @@ class MyExtension extends Extension {
             },
             function: (args, util) => {
                 api.removeCategory(args.CATEGORY);
+            }
+        });
+        api.addButton && api.addButton({
+            categoryId: 'phi.tools.category',
+            messageId: 'phi.tools.button',
+            callback: () => {
+                console.log(this);
+                console.log('😭I have no money');
             }
         });
         api.addBlock({
@@ -213,6 +227,7 @@ class MyExtension extends Extension {
                 }
             });
         }
+        console.log('inited!!');
     }
 
     onUninit () {
